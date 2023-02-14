@@ -7,7 +7,10 @@ Se solicita al usuario que ingrese por teclado 10 números. El programa devolver
 
 var num = [];
 const repeat = 10;
-
+var numNega = 0;
+var numPosi = 0;
+var numPares = 0;
+/*
 function solicitarNum(){
     for(let i = 0; i < repeat; i++){
         num[i] = prompt("Indica un número:");
@@ -16,12 +19,32 @@ function solicitarNum(){
 }
 
 console.log(num);
+*/
+
+function solicitarNum(){
+    for (let i = 0; i < repeat; i++){
+        num[i] = parseInt(prompt("Indica un número:"))
+            if(num[i] >= 0){
+                numPosi++;
+            }else if(num[i] > 0){
+                numNega++;
+            }else if(num[i] % 2 == 0){
+                numPares++;
+        }
+    }
+    return(numPosi, numNega, numPares);
+}
+
+solicitarNum();
+console.log(solicitarNum());
 
 // Ahora lo que necesito es un bucle que recorra el array de la var num para calcular si el elemento es +, - o par
 var calcular;
+/*
 var numNega = [];
 var numPosi = [];
 var numPares = [];
+*/
 
 function calcularNum(){
     //! ¿Cómo relaciono una función con otra?
