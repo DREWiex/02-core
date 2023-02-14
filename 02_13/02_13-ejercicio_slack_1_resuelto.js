@@ -12,7 +12,8 @@ let notas = [];
                 notas.push(validar(nota))
             }
         };
-        function validar(valor = 'g') {
+        
+        function validar(valor) {
             while (isNaN(valor)) {
                 valor = parseInt(prompt(`Número no válido, vuelve a escribir el número`));
             }
