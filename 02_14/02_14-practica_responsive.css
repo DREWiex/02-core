@@ -1,39 +1,71 @@
-:root{ /*declaramos las variables que vamos a utilizar*/
-
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&display=swap');
+:root{
     /* color */
-    --dark: #000;
-    --medium: #333;
-    --light: #fff;
-
+    --dark:#4e1212;
+    --medium:#333;
+    --light:#fff;
     /* tipografía */
-
-    /* medida */
-    --gap: 20px;
-
+        --font:"Babylonica"
+    /* medidas */
+    --gap:20px
 }
-
 *{
-    margin: 0;
+    margin: o;
     padding: 0;
-    box-sizing: border-box; /* No modifica el contenido (?) */
+    box-sizing: border-box;
 }
-
-body, html{
+body,html{
     font-family: var(--font);
 }
-
-h1, h2, h3, h4, h5, h6{
+h1,h2,h3,h4,h5,h6{
     font-weight: var(--bold);
 }
-
-.container{
+.container {
     width: 98%;
     margin: 0 auto;
     border: 1px solid var(--dark);
 }
-
-.bg-dark
-
-main > div {
+.bg-dark{
+    background-color: var(--dark);
+    color: var(--light);
+}
+.gridContainer > *{
+    padding: var(--gap);
+    border: 1px solid grey;
+}
+main > div{
     margin: calc(var(--gap) * 2) 0;
+}
+/* =========================================
+          768px
+============================ */
+@media screen and (min-width:768px){
+    .container {
+        width: 90%;
+       }
+       .gridContainer{
+        grid-template-columns: repeat(2,1fr);
+       }
+}
+/* =========================================
+          992px
+============================ */
+@media screen and (min-width:992px){
+    .container {
+        width: 80%;
+        }
+        .gridContainer.tres{
+            grid-template-columns: repeat(3,1fr);
+           }
+        .gridContainer.cuatro{
+            grid-template-columns: repeat(4,1fr);
+        }
+}
+/* =========================================
+          1200px
+============================ */
+@media screen and (min-width:1200px){
+    .container {
+        max-width: 500px;
+    }
 }
