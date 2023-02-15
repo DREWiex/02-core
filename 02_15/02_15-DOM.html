@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="cosa"></ul>
+    </div>
+
+    <script>
+        const cosa = document.getElementById("cosa"); // Acceso directo al nodo
+        const arrayCosas = ["mesa", "silla", "mando", "pluma"];  // Creo un array en la constante para luego añadir esos elementos/valores al nodo indicado arriba
+
+        for(let i = 0; i < arrayCosas.length; i++){ // Voy a recorrer cada posición de la array
+            let elementoLista = document.createElement("LI"); // Creo la variable elementoLista que es la que voy a utilizar para almacenar cada valor de la array y crear un elemento "li" por cada valor del array
+            elementoLista.textContent = arrayCosas[i]; // La propiedad .textContent indica que va a tomar el texto de cada posición del arrayCosas
+            console.log(elementoLista);
+            cosa.appendChild(elementoLista); // Añade lo que contenga la variable elementoLista al final del elemento (en este caso, que contiene el id "cosa")
+        }
+
+        cosa.innerHTML="<h1>Hola</h1>"; // Interpreta el HTML y lo añade
+        cosa.textContent="<h1>Hola</h1>"; // No interpreta HTML y añade el texto literal
+    </script>    
+</body>
+</html>
