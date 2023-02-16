@@ -8,8 +8,6 @@
 */
 
 // PARTE I
-var sumarNotas
-
 function solicitarNotas(){
 var nota1 = parseInt(prompt("Por favor, ingresa una primera nota:"));
 console.log(nota1);
@@ -20,26 +18,23 @@ console.log(nota2);
 var nota3 = parseInt(prompt("Por último, ingresa una tercera nota:"));
 console.log(nota3);
 
-sumarNotas = nota1 + nota2 + nota3;
-console.log(sumarNotas);
+var sumarNotas = nota1 + nota2 + nota3;
+return sumarNotas;
 }
 
 // PARTE II
-var notaMedia;
-
-function media(){
-    notaMedia = sumarNotas / 3;
+function media(sumarNotas){
+    var notaMedia = solicitarNotas(sumarNotas) / 3;
     alert("La nota media es " + notaMedia);
-    return notaMedia;
 }
 
 // PARTE III
-function notas(){
-    if(notaMedia < 5){
+function notas(notaMedia){
+    if(media(notaMedia) < 5){
         alert("Suspenso");
-    }else if(notaMedia >= 5 && notaMedia < 7){
+    }else if(media(notaMedia) >= 5 && media(notaMedia) < 7){
         alert("Aprobado");
-    }else if(notaMedia >= 7 && notaMedia <= 10){
+    }else if(media(notaMedia) >= 7 && media(notaMedia) <= 10){
         alert("Sobresaliente");
     }else{
         alert("Valor incorrecto");
