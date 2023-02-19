@@ -1,11 +1,11 @@
 //? JSON = JavaScript Object Notation
 
-const objCoche{ //*los objetos se declaran con las llaves
+const objCoche={ //* los objetos se declaran con las llaves
     marca: 'seat', //* el listado a continuación son las propiedades
-    modelo: 'panda',
+    modelo: 'panda', //* "modelo" sería el key y "panda" el value
     year: 1800,
-    colores: ['rojo', 'verde'],
-    propietario: {
+    colores: ['rojo', 'verde'], //* una array
+    propietario: { //* otro objeto dentro del objeto
         nombre: 'Pepe',
         phone: 699999999,
         email: 'pepe@hotmail.com'
@@ -14,7 +14,8 @@ const objCoche{ //*los objetos se declaran con las llaves
 }
 
 //! Todos los objetos derivan del objeto padre
-//* Accedemos a las propiedades del objeto 
+
+//* A continuación, accedemos a las propiedades del objeto 
 
 console.log(objCoche);
 
