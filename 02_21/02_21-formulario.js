@@ -48,56 +48,58 @@ boton.addEventListener('submit', validateAge)
 
 //* EJEMPLO 3
 
-const formulario=document.querySelector('#formulario');
-const campoNombre=document.querySelector('#nombre');
-const campoApellido=document.querySelector('#apellido');
-const campoCorreo=document.querySelector('#correo');
-
-let objValidar={
-    nombre:false,
-    apellido:false,
-    correo:false
+coconst formulario = document.querySelector('#formulario');
+const campoNombre = document.querySelector('#nombre');
+const campoApellido = document.querySelector('#apellido');
+const campoCorreo = document.querySelector('#correo');
+const listaErrores = document.querySelector('#listaErrores');
+let objValidar = {
+    nombre: false,
+    apellido: false,
+    correo: false
 }
-
-formulario.addEventListener('submit',(ev)=>{
-    ev.preventDefault() //* anula (o previene de realizar) la acción por defecto del atributo action="" del sumbit (enviar la información)
-    validar(); //* desde la función validar() realizo la validación de los datos
+const arrayUSuarios=[]
+formulario.addEventListener('submit', (ev) => {
+    ev.preventDefault()
+    validar();
 });
-
-//! lo primero que hay que hacer es prevenir que se envíe la información del submit por defecto (por ej., cuando se equivocan al introducir datos)
-
-const validar=()=>{
-
-    const nombre=campoNombre.value;
-    const apellido=campoApellido.value;
-    const correo=campoCorreo.value
-
-    if(isNaN(nombre) && nombre.trim().length>0){ //* compruebo que no sea un número y el nombre sin espacio (nombre.trim()) mayor que 0
-        objValidar.nombre=true
-    }else{
-        objValidar.nombre=false
+const validar = () => {
+    listaErrores.innerHTML=''
+    let errores='';
+    const nombre = campoNombre.value;
+    const apellido = campoApellido.value;
+    const correo = campoCorreo.value
+    if (isNaN(nombre) && nombre.trim().length > 0) {
+        objValidar.nombre = true
+    } else {
+        objValidar.nombre = false
+        errores+='<li>Debes escribir el nombre</li>'
+    }
+    if (isNaN(apellido) && apellido.trim().length > 0) {
+        objValidar.apellido = true
+    } else {
+        objValidar.apellido = false
+        errores+='<li>Debes escribir el apellido</li>'
+    }
+    if (isNaN(correo) && correo.trim().length > 0) {
+        objValidar.correo = true
+    } else {
+        objValidar.correo = false
+        errores+='<li>Debes escribir un correo valido</li>'
     }
 
-if(isNaN(apellido) && apellido.trim().length>0){
-        objValidar.apellido=true
-    }else{
-        objValidar.apellido=false
-    }
-
-    if(isNaN(correo) && correo.trim().length>0){
-        objValidar.correo=true
-    }else{
-        objValidar.correo=false
-    }
-
-    const arrayValidar=Object.values(objValidar)
-
-
-    const valida=arrayValidar.findIndex(item=>item==false);
-
-    if(valida === -1){
+    const arrayValidar = Object.values(objValidar)
+    const valida = arrayValidar.findIndex(item => item == false);
+    if (valida === -1) {
         //Todo a ido bien
+        arrayUSuarios.push({
+            nombre:nombre,
+            apellido:apellido,
+            correo:correo
+        })
+        console.log(arrayUSuarios)
     }else{
+        console.log(errores)
+        listaErrores.innerHTML=errores
     }
-
 }
