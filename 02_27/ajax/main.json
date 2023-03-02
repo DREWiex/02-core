@@ -1,0 +1,19 @@
+//! no funciona porque el json tiene que estar subido a un servidor, que es desde donde nos devuelve la información requerida
+
+[ //* solo un array por json
+    {
+        "nombre": "Pepe", //* tanto propiedad como valor, siempre entre comillas dobles, nunca simples
+        "edad": 20,
+        "correo": "pepe@correo.com" //* nunca lleva coma la última propiedad
+    },
+    {
+        "nombre": "Pepe",
+        "edad": 20,
+        "correo": "pepe@correo.com"
+    },
+    {
+        "nombre": "Pepe",
+        "edad": 20,
+        "correo": "pepe@correo.com"
+    }
+]

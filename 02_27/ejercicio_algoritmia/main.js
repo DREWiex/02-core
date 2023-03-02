@@ -12,7 +12,6 @@ const arrayDayMonth = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'j
 const hoy = () => {
 
     let dayMonth = fecha.getDate();
-    let month = fecha.getMonth();
     let year = fecha.getFullYear();
     let hour = fecha.getHours();
     let minutes = fecha.getMinutes();
